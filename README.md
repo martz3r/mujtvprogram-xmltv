@@ -1,10 +1,10 @@
 Why this repository exist
--
-This is concept of pulling & converting data from mujtvprogram.cz services to usable XMLTV format
+----
+This is concept of pulling & converting data from mujtvprogram.cz services to usable XMLTV format.
 
-Not finished, proper error handaling and basic run is missing and will be added for easier usage
+Not finished, proper error handaling and basic run is missing and will be added for easier usage.
 
 Sources
--
-Ownership of all services used by this script belong to "mujtvprogram"
-Source of id_map.xml is "iptv-org/epg" repository
+----
+- Ownership of all services used by this script belong to "mujtvprogram".
+- Source of id_map.xml is "iptv-org/epg" repository.
