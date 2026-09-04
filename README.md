@@ -7,4 +7,5 @@ Not finished, proper error handaling and basic run is missing and will be added 
 Sources
 ----
 - Ownership of all services used by this script belong to "mujtvprogram".
-- Source of id_map.xml is "iptv-org/epg" repository.
+- Data for "id_map.xml" come from "iptv-org/epg" repository data, to be useable with their M3U stream.
+  Format of "id_map.xml" has been converted to bit different style for this script.
