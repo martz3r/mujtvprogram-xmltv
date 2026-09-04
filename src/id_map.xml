@@ -1,0 +1,216 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<id_mapping>
+  <map id1="1" id2="CT1.cz@SD">ČT1</map>
+  <map id1="2" id2="CT2.cz@SD">ČT2</map>
+  <map id1="3" id2="TVNova.cz@SD">Nova</map>
+  <map id1="4" id2="Prima.cz@SD">Prima</map>
+  <map id1="5" id2="HBOCentralEurope.hu@HD">HBO</map>
+  <map id1="6" id2="HBO2CentralEurope.hu@HD">HBO2</map>
+  <map id1="7" id2="CinemaxCentralEurope.hu@HD">Cinemax</map>
+  <map id1="9" id2="AXNCEE.es@CzechRepublic">AXN</map>
+  <map id1="10" id2="Spektrum.cz@SD">Spektrum</map>
+  <map id1="11" id2="AnimalPlanetEurope.uk@SD">Animal Planet</map>
+  <map id1="12" id2="DiscoveryChannelEurope.uk@CzechRepublic">Discovery</map>
+  <map id1="13" id2="ViasatExplore.cz@SD">Viasat Explorer</map>
+  <map id1="14" id2="ViasatHistory.cz@SD">Viasat History</map>
+  <map id1="15" id2="CSFilm.cz@SD">CS Film</map>
+  <map id1="16" id2="Eurosport1.fr@France">Eurosport 1</map>
+  <map id1="17" id2="NovaSport1.cz@SD">Nova Sport 1</map>
+  <map id1="18" id2="CTSport.cz@SD">ČT sport</map>
+  <map id1="19" id2="Ocko.cz@SD">ÓČKO</map>
+  <map id1="20" id2="MTVGlobal.uk@SD">MTV Europe</map>
+  <map id1="21" id2="NationalGeographic.cz@SD">National Geographic</map>
+  <map id1="23" id2="CNNInternational.us@MENA">CNN</map>
+  <map id1="24" id2="CT24.cz@SD">ČT24</map>
+  <map id1="25" id2="Eurosport2.fr@France">Eurosport 2</map>
+  <map id1="29" id2="TVPaprika.cz@SD">TV Paprika</map>
+  <map id1="30" id2="SpektrumHome.cz@SD">Spektrum Home</map>
+  <map id1="31" id2="DisneyChannel.cz@SD">Disney Channel</map>
+  <map id1="32" id2="MinimaxCEE.cz@SD">Minimax</map>
+  <map id1="37" id2="TVP1.pl@SD">TVP 1</map>
+  <map id1="38" id2="TVP2.pl@SD">TVP 2</map>
+  <map id1="39" id2="Polsat.pl@SD">Polsat</map>
+  <map id1="40" id2="ORF1.at@SD">ORF1</map>
+  <map id1="41" id2="ORF2.at@SD">ORF2</map>
+  <map id1="42" id2="DasErste.de@SD">ARD</map>
+  <map id1="46" id2="3sat.de@SD">3SAT</map>
+  <map id1="47" id2="arte.de@SD">ARTE</map>
+  <map id1="49" id2="RTL.de@SD">RTL</map>
+  <map id1="50" id2="RTLZwei.de@SD">RTL2</map>
+  <map id1="52" id2="SAT1.de@SD">SAT1</map>
+  <map id1="53" id2="VOX.de@SD">VOX</map>
+  <map id1="54" id2="kabeleins.de@SD">Kabel1</map>
+  <map id1="61" id2="Sport1.cz@SD">Sport 1</map>
+  <map id1="63" id2="FilmPlus.cz@SD">Film+</map>
+  <map id1="64" id2="FilmBox.nl@CzechRepublic">FilmBox</map>
+  <map id1="65" id2="FilmBoxStars.nl@CzechRepublic">FilmBox Plus</map>
+  <map id1="67" id2="Mezzo.fr@SD">Mezzo</map>
+  <map id1="72" id2="HustlerTVEurope.nl@SD">Hustler</map>
+  <map id1="73" id2="CartoonitoCEE.uk@SD">Cartoonito</map>
+  <map id1="74" id2="PrivateTV.nl@SD">Private TV</map>
+  <map id1="75" id2="TVNoe.cz@SD">TV Noe</map>
+  <map id1="77" id2="JimJamEurope.uk@SD">JimJam</map>
+  <map id1="78" id2="NovaCinema.cz@SD">Nova Cinema</map>
+  <map id1="82" id2="NationalGeographicWild.cz@SD">National Geographic Wild</map>
+  <map id1="85" id2="ExtremeSportsChannel.nl@SD">Extreme Sports Channel</map>
+  <map id1="89" id2="TVBarrandov.cz@SD">TV Barrandov</map>
+  <map id1="92" id2="PrimaCool.cz@SD">Prima COOL</map>
+  <map id1="93" id2="Sport2.cz@SD">Sport 2</map>
+  <map id1="97" id2="BBCNews.uk@Europe">BBC World News</map>
+  <map id1="102" id2="TheFishingHuntingChannel.hu@SD">Fishing &amp; Hunting</map>
+  <map id1="103" id2="PlayboyTVEurope.us@SD">Playboy</map>
+  <map id1="105" id2="TravelChannelEMEA.uk@SD">Travel Channel</map>
+  <map id1="108" id2="BabyTV.uk@UK">Baby TV</map>
+  <map id1="109" id2="ducktv.sk@SD">ducktv</map>
+  <map id1="110" id2="StingrayCMusic.ca@SD">Stingray CMusic</map>
+  <map id1="112" id2="Cinemax2CentralEurope.hu@HD">Cinemax 2</map>
+  <map id1="117" id2="EuronewsEnglish.fr@SD">Euronews</map>
+  <map id1="119" id2="FashionTVEurope.fr@SD">Fashion TV</map>
+  <map id1="121" id2="FilmBoxExtra.nl@CzechRepublic">FilmBox Extra HD</map>
+  <map id1="122" id2="France24.fr@French">France 24 (FR)</map>
+  <map id1="125" id2="History.cz@SD">History Channel</map>
+  <map id1="127" id2="LEOTV.cz@SD">LEO TV</map>
+  <map id1="132" id2="">Music Box</map>
+  <map id1="137" id2="RT.ru@SD">RT</map>
+  <map id1="138" id2="SkyNewsInternational.uk@SD">Sky News</map>
+  <map id1="141" id2="TV5MondeEurope.fr@SD">TV5 Monde</map>
+  <map id1="146" id2="BlueHustler.nl@SD">Blue Hustler</map>
+  <map id1="149" id2="">MTV Europe CZ</map>
+  <map id1="151" id2="DMAX.de@SD">DMAX</map>
+  <map id1="152" id2="CNBCEurope.uk@SD">CNBC Europe</map>
+  <map id1="162" id2="DW.de@English">Deutsche Welle</map>
+  <map id1="174" id2="ProSieben.de@SD">PRO7</map>
+  <map id1="180" id2="Dvojka.sk@SD">ST2</map>
+  <map id1="181" id2="Jednotka.sk@SD">ST1</map>
+  <map id1="182" id2="MarkizaDoma.sk@SD">Doma</map>
+  <map id1="183" id2="Markiza.sk@SD">Markíza</map>
+  <map id1="184" id2="JOJPlus.sk@SD">PLUS</map>
+  <map id1="185" id2="TVJOJ.sk@SD">JOJ</map>
+  <map id1="189" id2="Spektrum.cz@SD">Spectrum</map>
+  <map id1="192" id2="TA3.sk@SD">TA3</map>
+  <map id1="206" id2="RetroMusicTV.cz@SD">Retro</map>
+  <map id1="207" id2="ViasatNature.cz@SD">Viasat Nature</map>
+  <map id1="214" id2="NationalGeographic.cz@SD">National Geographic HD</map>
+  <map id1="216" id2="ZDFneo.de@SD">ZDF NEO</map>
+  <map id1="217" id2="AlJazeera.qa@English">Al Jazeera English</map>
+  <map id1="225" id2="GolfChannel.us@SD">Golf Channel</map>
+  <map id1="226" id2="PrimaLove.cz@SD">Prim LOVE</map>
+  <map id1="233" id2="StingrayClassica.ca@SD">Stingray Classica</map>
+  <map id1="234" id2="StingrayiConcerts.ca@SD">Stingray iConcerts</map>
+  <map id1="235" id2="DeluxeMusic.de@SD">Deluxe Music</map>
+  <map id1="243" id2="Duna.hu@SD">Duna (SK)</map>
+  <map id1="259" id2="RTL.hu@SD">RTL</map>
+  <map id1="268" id2="TV8.sk@SD">TV 8</map>
+  <map id1="271" id2="FilmBoxFamily.nl@Africa">FilmBox Family</map>
+  <map id1="272" id2="FilmEurope.cz@SD">Film Europe</map>
+  <map id1="276" id2="TLCLatinAmerica.us@Panregional">TLC</map>
+  <map id1="284" id2="BloombergTV.us@Europe">Bloomberg</map>
+  <map id1="288" id2="24Horas.es@SD">Canal 24 Horas</map>
+  <map id1="296" id2="A11.cz@SD">A11</map>
+  <map id1="300" id2="EroX.nl@HD">Erox HD</map>
+  <map id1="301" id2="FightBox.nl@SD">FightBox HD</map>
+  <map id1="303" id2="CartoonitoMENA.uk@SD">SUPER RTL</map>
+  <map id1="304" id2="TVLux.sk@SD">TV Lux</map>
+  <map id1="307" id2="M1.hu@SD">M1</map>
+  <map id1="308" id2="MarkizaDajto.sk@SD">Dajto</map>
+  <map id1="317" id2="DocuBox.nl@SD">DocuBox</map>
+  <map id1="326" id2="CartoonNetworkCEE.uk@CzechRepublic">Cartoon Network</map>
+  <map id1="328" id2="EroXXX.nl@HD">EroXXX HD</map>
+  <map id1="333" id2="PrimaZoom.cz@SD">Prima ZOOM</map>
+  <map id1="338" id2="FashionBox.nl@SD">FashionBox HD</map>
+  <map id1="344" id2="ArenaSport1.sk@SD">Arena Sport 1</map>
+  <map id1="349" id2="JOJWAU.sk@SD">WAU</map>
+  <map id1="352" id2="OckoStar.cz@SD">ÓČKO STAR</map>
+  <map id1="354" id2="KiKA.de@SD">KiKA</map>
+  <map id1="355" id2="DisneyJunior.cz@SD">Disney Junior</map>
+  <map id1="356" id2="M2.hu@SD">M2</map>
+  <map id1="357" id2="CTDecko.cz@SD">ČT :D</map>
+  <map id1="358" id2="CTart.cz@SD">ČT art</map>
+  <map id1="360" id2="Duna.hu@SD">Duna (H)</map>
+  <map id1="361" id2="RTL.hu@SD">RTL</map>
+  <map id1="364" id2="Senzi.sk@SD">Senzi</map>
+  <map id1="365" id2="Rebel.cz@SD">Rebel</map>
+  <map id1="366" id2="CoolTV.hu@SD">Cool TV</map>
+  <map id1="367" id2="360TuneBox.nl@SD">360TuneBox</map>
+  <map id1="368" id2="CrimePlusInvestigationCEE.uk@SD">Crime &amp; Investigation</map>
+  <map id1="369" id2="AXNBlack.us@Bulgary">AXN Black</map>
+  <map id1="370" id2="AXNWhite.us@SD">AXN White</map>
+  <map id1="371" id2="OckoExpres.cz@SD">ÓČKO EXPRES</map>
+  <map id1="376" id2="GINXTV.uk@SD">Ginx eSports TV</map>
+  <map id1="377" id2="BrazzersTVEurope.us@SD">Brazzers TV Europe</map>
+  <map id1="379" id2="ArenaSport2.sk@SD">Arena Sport 2</map>
+  <map id1="383" id2="MezzoLive.fr@SD">Mezzo Live HD</map>
+  <map id1="384" id2="InvestigationDiscoveryEurope.us@SD">Investigation Discovery</map>
+  <map id1="393" id2="ZDF.de@SD">ZDF</map>
+  <map id1="394" id2="AMCEurope.uk@CzechRepublic">AMC</map>
+  <map id1="396" id2="France24.fr@English">France 24 (EN)</map>
+  <map id1="397" id2="FilmBoxPremium.nl@CzechRepublic">FilmBox Premium</map>
+  <map id1="398" id2="Jojko.sk@SD">Jojko</map>
+  <map id1="399" id2="HTV1.vn@SD">HTV1</map>
+  <map id1="400" id2="HTV2.vn@SD">HTV2</map>
+  <map id1="404" id2="FastFunBox.nl@SD">Fast&amp;FunBox HD</map>
+  <map id1="406" id2="EnglishClubTV.uk@SD">English Club TV</map>
+  <map id1="408" id2="SAT1Gold.de@SD">SAT.1 Gold</map>
+  <map id1="410" id2="EEurope.nl@SD">E! Entertainment</map>
+  <map id1="423" id2="MnamTV.cz@SD">Mňam TV</map>
+  <map id1="453" id2="">Auto Motor Sport HD</map>
+  <map id1="454" id2="KinoBarrandov.cz@SD">Kino Barrandov</map>
+  <map id1="455" id2="BarrandovKrimi.cz@SD">Barrandov Krimi</map>
+  <map id1="459" id2="JOJCinema.sk@SD">JOJ Cinema</map>
+  <map id1="466" id2="NovaSport2.cz@SD">Nova Sport 2</map>
+  <map id1="471" id2="FoodNetworkEMEA.us@SD">Food Network</map>
+  <map id1="474" id2="PrimaMax.cz@SD">Prima MAX</map>
+  <map id1="494" id2="NovaInternational.cz@SD">Nova International</map>
+  <map id1="495" id2="MarkizaInternational.sk@SD">Markíza International</map>
+  <map id1="512" id2="HBO3CentralEurope.hu@HD">HBO3</map>
+  <map id1="532" id2="JOJFamily.sk@SD">JOJ Family</map>
+  <map id1="533" id2="DorcelTV.nl@SD">Dorcel TV</map>
+  <map id1="556" id2="PrimaPlus.cz@SD">Prima SK</map>
+  <map id1="558" id2="NovaAction.cz@SD">Nova Action</map>
+  <map id1="559" id2="NovaGold.cz@SD">Nova Krimi</map>
+  <map id1="560" id2="NovaFun.cz@SD">Nova Fun</map>
+  <map id1="568" id2="MnauTV.cz@SD">Mňau TV</map>
+  <map id1="582" id2="Travelxp.in@SD">Travelxp HD</map>
+  <map id1="601" id2="EpicDrama.uk@Sweden">Epic Drama</map>
+  <map id1="606" id2="TelevizeSeznam.cz@SD">Televize Seznam</map>
+  <map id1="608" id2="PrimaKrimi.cz@SD">Prim KRIMI</map>
+  <map id1="622" id2="NickJr.cz@SD">Nick Jr. Czech</map>
+  <map id1="624" id2="Nickelodeon.cz@SD">Nickelodeon</map>
+  <map id1="699" id2="PowerTV.pl@SD">Power TV</map>
+  <map id1="727" id2="OckoBlack.cz@SD">Óčko Black HD</map>
+  <map id1="728" id2="LalaTV.sk@SD">LALA TV</map>
+  <map id1="755" id2="CSHistory.cz@SD">CS History</map>
+  <map id1="756" id2="CSHorror.cz@SD">CS Horror</map>
+  <map id1="757" id2="CSMystery.cz@SD">CS Mystery</map>
+  <map id1="759" id2="Nicktoons.cz@SD">Nicktoons</map>
+  <map id1="761" id2="DorcelXXX.nl@SD">Dorcel XXX</map>
+  <map id1="808" id2="LoveNature.ca@SD">Love Nature HD</map>
+  <map id1="816" id2="FilmEuropePlus.cz@SD">Film Europe + HD</map>
+  <map id1="818" id2="CNNPrimaNews.cz@SD">CNN Prim NEWS</map>
+  <map id1="841" id2="SlagerPremium.cz@SD">Šlágr Premium</map>
+  <map id1="892" id2="VixenTV.ca@SD">Vixen</map>
+  <map id1="897" id2="PrimaStar.cz@SD">Prima STAR</map>
+  <map id1="902" id2="PremierSport2.sk@SD">Premier Sport 2</map>
+  <map id1="904" id2="NovaSport3.cz@SD">Nova Sport 3</map>
+  <map id1="905" id2="NovaSport4.cz@SD">Nova Sport 4</map>
+  <map id1="921" id2="NovaLady.cz@SD">Nova Lady</map>
+  <map id1="923" id2="PrimaShow.cz@SD">Prim SHOW</map>
+  <map id1="928" id2="Sport.sk@SD">RTVS Šport</map>
+  <map id1="1016" id2="">ST24</map>
+  <map id1="1017" id2="">Markíza Krimi</map>
+  <map id1="1040" id2="">CANAL+ Sport</map>
+  <map id1="1042" id2="">JOJ 24</map>
+  <map id1="1049" id2="">Canal+ Action</map>
+  <map id1="1050" id2="">Story 4</map>
+  <map id1="1051" id2="">TV Spark</map>
+  <map id1="1060" id2="">JOJ Svet</map>
+  <map id1="1071" id2="">Canal+ Sport 2</map>
+  <map id1="1073" id2="">Nova Sport 5</map>
+  <map id1="1074" id2="">Nova Sport 6</map>
+  <map id1="1089" id2="">Warner TV</map>
+  <map id1="1107" id2="">JOJ Šport</map>
+  <map id1="1114" id2="">Markíza KLASIK</map>
+  <map id1="1128" id2="">Viasat True Crime</map>
+  <map id1="1133" id2="">DVTV Extra</map>
+  <map id1="1145" id2="">JOJ Šport 2</map>
+</id_mapping>
