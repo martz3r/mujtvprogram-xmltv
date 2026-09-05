@@ -4,29 +4,12 @@ from datetime import datetime, timezone, timedelta
 from zoneinfo import ZoneInfo
 import os, requests, unicodedata, logging
 import re
+
 try:
     import roman
 except ImportError:
     logging.error('Error importing "roman" package, extract from programme title disabled')
     roman = None
-
-cwd = os.path.split(__file__)[0]
-LOCAL_TZ = ZoneInfo("Europe/Prague")
-FILL_GAPS = True
-SAVE_SEPERATE = False
-OUTPUT_DIR = os.path.join(cwd, 'epg')
-
-# MujTVProgram URLS
-channel_url = 'https://services.mujtvprogram.cz/tvprogram2services/services/tvchannellist_mobile.php'
-programme_url = 'https://services.mujtvprogram.cz/tvprogram2services/services/tvprogrammelist_mobile.php'
-cid_array:list[int] = [1,2,3,4,7,9,10,12,14,15,21,24,30,63,64,65,78,89,92,112,121,
-                       125,207,226,271,272,333,369,370,394,397,459,474,558,559,560,
-                       606,608,818,897,921,923,1049]
-
-# ID Mapping
-id_mapfile = os.path.join(cwd, 'id_map.xml')
-id_map = {}
-unique_id = set([])
 
 
 class Channel: 
@@ -120,12 +103,12 @@ def parse_local_string(dt_str: str) -> datetime:
     return naive.replace(tzinfo=LOCAL_TZ)
 
 # -----  Parsing  -----
-def id_from_name(name: str) -> str:
+def _id_from_name(name: str) -> str:
     name = "".join(c for c in unicodedata.normalize("NFKD", name) if not unicodedata.combining(c))
     name = name.replace(' ', '_')
     return name
 
-def parse_id_map(data) -> dict[str,dict]:
+def _parse_id_map(data) -> dict[str,dict]:
     id_map = {}
     root = ET.fromstring(data)
     mappings = root.findall('.//map')
@@ -143,16 +126,16 @@ def parse_id_map(data) -> dict[str,dict]:
 
     return id_map
         
-def get_id(cid:str, name:str, id_map:dict={}):
+def _get_id(cid:str, name:str, id_map:dict={}):
     _map = id_map.get(str(cid), {})
     _id = _map.get('id', None)
     if not _id or str(_id).strip() == '':
-        _id = id_from_name(name)
+        _id = _id_from_name(name)
         id_map[str(cid)] = {'id': _id, 'name': name}
         logging.warning(f'Fallback ID "{_id}" for "{name}"')
     return (_id, id_map)
 
-def extract_season_episode(text: str) -> tuple[int | None, int | None]:
+def _extract_season_episode(text: str) -> tuple[int | None, int | None]:
     if not roman:
         return None, None
 
@@ -177,7 +160,7 @@ def extract_season_episode(text: str) -> tuple[int | None, int | None]:
     return season, episode
 
 # -----  XMLTV Creation Methods  -----
-def mk_xmltv_channel(channel:Channel) -> ET.Element:
+def _mk_xmltv_channel(channel:Channel) -> ET.Element:
     elem = ET.Element("channel", id=str(channel.id))  # e.g. "bbc1.uk"
  
     for name, lang in channel.display_names:
@@ -192,7 +175,7 @@ def mk_xmltv_channel(channel:Channel) -> ET.Element:
  
     return elem
 
-def mk_xmltv_programme(programme:Programme) -> ET.Element:
+def _mk_xmltv_programme(programme:Programme) -> ET.Element:
     if programme.stop is not None:
         root_elem = ET.Element("programme",channel=str(programme.channel_id), start=to_xmltv_time(programme.start), stop=to_xmltv_time(programme.stop))
     else:
@@ -263,8 +246,8 @@ def mk_xmltv_programme(programme:Programme) -> ET.Element:
  
     return root_elem
 
-# ---- XMLTV Methods -----
-def fix_overlaps(programmes:list[Programme]):
+# ---- Channel & Programme class Methods -----
+def _fix_overlaps(programmes:list[Programme]):
     by_channel = defaultdict(list[tuple[float|int, Programme]])
     seen_first = {}  # (channel, start, title) -> True, for de-duplication
     fixed_elems:list[tuple[float|int, Programme]] = []
@@ -294,7 +277,7 @@ def fix_overlaps(programmes:list[Programme]):
     return [x[1] for x in fixed_elems]
 
 
-def fill_gaps(programmes:list[Programme], placeholder:Programme, min_gap_minutes:float=1, ):
+def _fill_gaps(programmes:list[Programme], placeholder:Programme, min_gap_minutes:float=1, ):
     by_channel = defaultdict(list)
     all_elems:list[tuple[int, Programme]] = []
 
@@ -318,7 +301,7 @@ def fill_gaps(programmes:list[Programme], placeholder:Programme, min_gap_minutes
     all_elems.sort(key=lambda p: p[0])
     return [x[1] for x in all_elems]  
 
-def get_programmes(day:int=0, id_map:dict[str,dict] = {}):
+def _get_programmes(day:int=0, id_map:dict[str,dict] = {}):
     date = datetime.now().date() + timedelta(day)
     logging.info(f'Pulling day {date.strftime("%d.%m.%Y")}')
 
@@ -399,7 +382,7 @@ def get_programmes(day:int=0, id_map:dict[str,dict] = {}):
 
                 # If series element exist, it may be series & contain season & episode number in title
                 if programme.findtext('series', None): 
-                    season_num, episode_num = extract_season_episode(title)
+                    season_num, episode_num = _extract_season_episode(title)
                     prog.set_serie(season_num, episode_num)
 
                 # Add image 
@@ -412,86 +395,94 @@ def get_programmes(day:int=0, id_map:dict[str,dict] = {}):
 
     return programmes
 
+def _pull_channels(cid_list:list[int], id_map:dict):
+    channels:list[Channel] = []
+    url = f'{channel_url}?channel_cid_arr={",".join([str(x) for x in cid_list])}&localization=1'
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+    except requests.RequestException as e:
+        logging.error(f'[ChannelURL] RequestException: {e}')
+        exit(1)
+    except Exception as e:
+        logging.error(f'[ChannelURL] Exception: {e}')
+        exit(1)
+
+    root = ET.fromstring(response.content)
+    xml_channels = root.findall('.//channel')
+    logging.info(f'Got {len(xml_channels)} channels')
+    for ch in xml_channels:
+        cid = ch.findtext("cid")
+        name = ch.findtext("name")
+        lang = ch.findtext("lang")
+        icon_url = ch.findtext("logo-image/url") or None
+
+        if cid is not None and name is not None:
+            _id, id_map = _get_id(cid, name, id_map)
+            ch_elem = Channel(_id, [(name, lang)], None, icon_url)
+            channels.append(ch_elem)
+    return channels
+
 # ----- XML ----
 
-def create_root() -> ET.Element:
-    return ET.Element("tv", attrib={"generator-info-name": "mujtvprogram-fetch", "date": to_xmltv_time(now)})
+def _create_root(date:datetime, generator_name:str = "mujtvprogram-fetch") -> ET.Element:
+    return ET.Element("tv", attrib={"generator-info-name": generator_name, "date": to_xmltv_time(date)})
 
-def save_xml_tree(element:ET.Element, path:str):
+def _save_xml_tree(element:ET.Element, file):
     tree = ET.ElementTree(element)
     ET.indent(tree, space="  ")
-    tree.write(path, encoding="UTF-8", xml_declaration=True)
-    logging.info(f'Wrote "{path}"')
+    tree.write(file, encoding="UTF-8", xml_declaration=True)
+    try:
+        logging.info(f'XML Tree saved as "{file.name}"') # If is IO object with name & write attribs
+    except AttributeError:
+        logging.info(f'XML Tree saved as "{file}"')
+
+# ====================================    Methods    ====================================
+
+def merge_xmltv(channel, *programme): ... 
+def pull_seperate(channel_path:str, programme_path:str): ...
+
+def pull_guide(file, days:list[int], filler_programme:Programme|None = None, id_map:dict={}):
+    """Pulls guide for days relative to today"""
+    channels = _pull_channels(cid_array, id_map)
+    programmes:list[Programme] = []
+    for d in days:
+        progs = _get_programmes(d, id_map)
+        programmes.extend(progs)
+
+    programmes = _fix_overlaps(programmes)
+    if filler_programme:
+        programmes = _fill_gaps(programmes, filler_programme)
+        
+    logging.info(f'Total {len(channels)} Channels & {len(programmes)} Programme entries')
+    logging.info('Converting objects to xml elements...')
+
+    tv_root = _create_root(datetime.now(LOCAL_TZ))
+    for ch in channels: tv_root.append(_mk_xmltv_channel(ch))
+    for prog in programmes: tv_root.append(_mk_xmltv_programme(prog))
+    _save_xml_tree(tv_root, file)
 
 ### ====================================    Main Run    ====================================
 
-logging.basicConfig(level=logging.DEBUG)
-
+cwd = os.path.split(__file__)[0]
+LOCAL_TZ = ZoneInfo("Europe/Prague")
 filler_programme:Programme|None = Programme('', 'No Information', 'No data from service', ['Off Air'])
 now = datetime.now(LOCAL_TZ)
-tv_root = create_root()
 
-channels:list[Channel] = []
-programmes:list[Programme] = []
+# MujTVProgram URLS
+channel_url = 'https://services.mujtvprogram.cz/tvprogram2services/services/tvchannellist_mobile.php'
+programme_url = 'https://services.mujtvprogram.cz/tvprogram2services/services/tvprogrammelist_mobile.php'
+cid_array:list[int] = [1,2,3,4,7,9,10,12,14,15,21,24,30,63,64,65,78,89,92,112,121,
+                       125,207,226,271,272,333,369,370,394,397,459,474,558,559,560,
+                       606,608,818,897,921,923,1049]
 
-# Load ID Map file
+# ID Mapping
+id_mapfile = os.path.join(cwd, 'id_map.xml')
+id_map = {}
+unique_id = set([])
+
 if id_mapfile and os.path.exists(id_mapfile):
     logging.info('Found Map File')
     with open(id_mapfile, 'rb') as f:
-        id_map = parse_id_map(f.read())
+        id_map = _parse_id_map(f.read())
 
-# Request channel info
-url = f'{channel_url}?channel_cid_arr={",".join([str(x) for x in cid_array])}&localization=1'
-try:
-    response = requests.get(url)
-    response.raise_for_status()
-except requests.RequestException as e:
-    logging.error(f'[ChannelURL] RequestException: {e}')
-    exit(1)
-except Exception as e:
-    logging.error(f'[ChannelURL] Exception: {e}')
-    exit(1)
-
-root = ET.fromstring(response.content)
-xml_channels = root.findall('.//channel')
-logging.info(f'Got {len(xml_channels)} channels')
-for ch in xml_channels:
-    cid = ch.findtext("cid")
-    name = ch.findtext("name")
-    lang = ch.findtext("lang")
-    icon_url = ch.findtext("logo-image/url") or None
-
-    if cid is not None and name is not None:
-        _id, id_map = get_id(cid, name, id_map)
-        ch_elem = Channel(_id, [(name, lang)], None, icon_url)
-        channels.append(ch_elem)
-
-days = [-1, 0, 1, 2]
-for d in days:
-    progs = get_programmes(d, id_map)
-    programmes.extend(progs)
-
-programmes = fix_overlaps(programmes)
-if FILL_GAPS and filler_programme:
-    programmes = fill_gaps(programmes, filler_programme)
-
-logging.info(f'Total {len(channels)} Channels & {len(programmes)} Programme entries')
-logging.info('Converting objects to xml elements...')
-
-for ch in channels: tv_root.append(mk_xmltv_channel(ch))
-
-if SAVE_SEPERATE:
-    save_xml_tree(tv_root, os.path.join(OUTPUT_DIR, 'channels.xml'))
-    per_day:dict[str, list] = {}
-    for prog in programmes:
-        key = str(prog.start.strftime('%Y%m%d'))
-        if key not in per_day.keys(): per_day[key] = []
-        per_day[key].append(mk_xmltv_programme(prog))
-    for n,p in per_day.items():
-        prog_root = create_root()
-        prog_root.extend(p)
-        save_xml_tree(prog_root, os.path.join(OUTPUT_DIR, f'{n}_prog.xml'))
-
-else:
-    for prog in programmes: tv_root.append(mk_xmltv_programme(prog))
-    save_xml_tree(tv_root, os.path.join(OUTPUT_DIR, 'tvprogram.xml'))
