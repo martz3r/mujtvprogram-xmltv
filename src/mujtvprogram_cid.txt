@@ -1,0 +1,213 @@
+1		ČT1
+2		ČT2
+3		Nova
+4		Prima
+5		HBO
+6		HBO2
+7		Cinemax
+9		AXN
+10		Spektrum
+11		Animal Planet
+12		Discovery
+13		Viasat Explorer
+14		Viasat History
+15		CS Film
+16		Eurosport 1
+17		Nova Sport 1
+18		ČT sport
+19		ÓČKO
+20		MTV Europe
+21		National Geographic
+23		CNN
+24		ČT24
+25		Eurosport 2
+29		TV Paprika
+30		Spektrum Home
+31		Disney Channel
+32		Minimax
+37		TVP 1
+38		TVP 2
+39		Polsat
+40		ORF1
+41		ORF2
+42		ARD
+46		3SAT
+47		ARTE
+49		RTL
+50		RTL2
+52		SAT1
+53		VOX
+54		Kabel1
+61		Sport 1
+63		Film+
+64		FilmBox
+65		FilmBox Plus
+67		Mezzo
+72		Hustler
+73		Cartoonito
+74		Private TV
+75		TV Noe
+77		JimJam
+78		Nova Cinema
+82		National Geographic Wild
+85		Extreme Sports Channel
+89		TV Barrandov
+92		Prima COOL
+93		Sport 2
+97		BBC World News
+102		Fishing & Hunting
+103		Playboy
+105		Travel Channel
+108		Baby TV
+109		ducktv
+110		Stingray CMusic
+112		Cinemax 2
+117		Euronews
+119		Fashion TV
+121		FilmBox Extra HD
+122		France 24 (FR)
+125		History Channel
+127		LEO TV
+132		Music Box
+137		RT
+138		Sky News
+141		TV5 Monde
+146		Blue Hustler
+149		MTV Europe CZ
+151		DMAX
+152		CNBC Europe
+162		Deutsche Welle
+174		PRO7
+180		ST2
+181		ST1
+182		Doma
+183		Markíza
+184		PLUS
+185		JOJ
+189		Spectrum
+192		TA3
+206		Retro
+207		Viasat Nature
+214		National Geographic HD
+216		ZDF NEO
+217		Al Jazeera English
+225		Golf Channel
+226		Prim LOVE
+233		Stingray Classica
+234		Stingray iConcerts
+235		Deluxe Music
+243		Duna (SK)
+259		RTL
+268		TV 8
+271		FilmBox Family
+272		Film Europe
+276		TLC
+284		Bloomberg
+288		Canal 24 Horas
+296		A11
+300		Erox HD
+301		FightBox HD
+303		SUPER RTL
+304		TV Lux
+307		M1
+308		Dajto
+317		DocuBox
+326		Cartoon Network
+328		EroXXX HD
+333		Prima ZOOM
+338		FashionBox HD
+344		Arena Sport 1
+349		WAU
+352		ÓČKO STAR
+354		KiKA
+355		Disney Junior
+356		M2
+357		ČT :D
+358		ČT art
+360		Duna (H)
+361		RTL
+364		Senzi
+365		Rebel
+366		Cool TV
+367		360TuneBox
+368		Crime & Investigation
+369		AXN Black
+370		AXN White
+371		ÓČKO EXPRES
+376		Ginx eSports TV
+377		Brazzers TV Europe
+379		Arena Sport 2
+383		Mezzo Live HD
+384		Investigation Discovery
+393		ZDF
+394		AMC
+396		France 24 (EN)
+397		FilmBox Premium
+398		Jojko
+399		HTV1
+400		HTV2
+404		Fast&FunBox HD
+406		English Club TV
+408		SAT.1 Gold
+410		E! Entertainment
+423		Mňam TV
+453		Auto Motor Sport HD
+454		Kino Barrandov
+455		Barrandov Krimi
+459		JOJ Cinema
+466		Nova Sport 2
+471		Food Network
+474		Prima MAX
+494		Nova International
+495		Markíza International
+512		HBO3
+532		JOJ Family
+533		Dorcel TV
+556		Prima SK
+558		Nova Action
+559		Nova Krimi
+560		Nova Fun
+568		Mňau TV
+582		Travelxp HD
+601		Epic Drama
+606		Televize Seznam
+608		Prim KRIMI
+622		Nick Jr. Czech
+624		Nickelodeon
+699		Power TV
+727		Óčko Black HD
+728		LALA TV
+755		CS History
+756		CS Horror
+757		CS Mystery
+759		Nicktoons
+761		Dorcel XXX
+808		Love Nature HD
+816		Film Europe + HD
+818		CNN Prim NEWS
+841		Šlágr Premium
+892		Vixen
+897		Prima STAR
+902		Premier Sport 2
+904		Nova Sport 3
+905		Nova Sport 4
+921		Nova Lady
+923		Prim SHOW
+928		RTVS Šport
+1016		ST24
+1017		Markíza Krimi
+1040		CANAL+ Sport
+1042		JOJ 24
+1049		Canal+ Action
+1050		Story 4
+1051		TV Spark
+1060		JOJ Svet
+1071		Canal+ Sport 2
+1073		Nova Sport 5
+1074		Nova Sport 6
+1089		Warner TV
+1107		JOJ Šport
+1114		Markíza KLASIK
+1128		Viasat True Crime
+1133		DVTV Extra
+1145		JOJ Šport 2
